@@ -1,46 +1,61 @@
-# Guía de Ejecución - DistriGest
+# DistriGest - Sistema de Gestión Comercial e Inventario
 
-Instrucciones rápidas para configurar y ejecutar el proyecto.
-
----
-
-## 1. ¿Por qué ocurrió el error de `pip`?
-El error:
-```
-pip : El término 'pip' no se reconoce...
-```
-Ocurre porque **el entorno virtual (`.venv`) no está activado** en la terminal de PowerShell o Python no está en el `PATH` del sistema.
+**Prototipo Modular de Interfaz (Evaluación 3 - Ingeniería de Software)**  
+*Firma Desarrolladora: Bomcode | Cliente: DistriSur Araucanía SpA*
 
 ---
 
-## 2. Pasos para ejecutar el proyecto
+## 1. Requisitos Previos
 
-### Paso 1: Activar el entorno virtual
-En la terminal de PowerShell dentro de la carpeta del proyecto, ejecuta:
+* **Intérprete:** Python 3.10 o superior (64-bit).
+* **Gestor de paquetes:** `pip` actualizado.
+* **Sistema Operativo:** Windows 10/11, Linux o macOS.
+
+---
+
+## 2. Protocolo de Despliegue y Ejecución
+
+Abrir una terminal (PowerShell o CMD) en la raíz del proyecto y ejecutar los siguientes pasos:
+
+### Paso 1: Creación del Entorno Virtual
+```powershell
+python -m venv .venv
+```
+
+### Paso 2: Activación del Entorno
+
+**En Windows (PowerShell):**
 ```powershell
 .\.venv\Scripts\Activate.ps1
 ```
-> **Nota:** Si PowerShell bloquea los scripts por directivas de seguridad, ejecuta primero:
+
+> *(En caso de restricción por directivas de ejecución de scripts, habilitar temporalmente con:)*
 > ```powershell
 > Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 > .\.venv\Scripts\Activate.ps1
 > ```
 
-### Paso 2: Instalar dependencias
-Con el entorno activado `(.venv)`, instala las librerías necesarias:
+**En Windows (CMD tradicional):**
+```cmd
+.\.venv\Scripts\activate.bat
+```
+
+### Paso 3: Instalación de Dependencias
 ```powershell
 pip install -r requirements.txt
 ```
 
-### Paso 3: Iniciar la aplicación
+### Paso 4: Inicialización del Sistema
 ```powershell
 python main.py
 ```
 
 ---
 
-## ⚡ Método Rápido (Sin activar el entorno)
-Puedes ejecutar la aplicación directamente con el Python del entorno virtual:
+## 3. Ejecución Rápida (Alternativa sin activación de shell)
+
+Si el entorno `.venv` ya fue creado y sus dependencias instaladas, el sistema puede inicializarse directamente invocando el binario local:
+
 ```powershell
 .\.venv\Scripts\python.exe main.py
 ```
