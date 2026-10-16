@@ -1,0 +1,15 @@
+# Entorno Virtual
+.venv/
+venv/
+ENV/
+
+# Bytecode de Python y Caché
+__pycache__/
+*.py[cod]
+*$py.class
+
+# IDE y Editores
+.vscode/
+.idea/
+*.swp
+*.swo
